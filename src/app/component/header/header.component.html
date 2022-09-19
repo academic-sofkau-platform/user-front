@@ -1,0 +1,33 @@
+<mat-toolbar>
+  <div class="logo">
+    <span>
+      <a routerLink="/home">
+        <img width="100px" height="37px"
+          src="https://ik.imagekit.io/vpvzuhxi3/Sofka/logo-sofkau_blanco_5wK-vAh4g.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1661194626415"
+          data-src="https://www.sofka.com.co/wp-content/uploads/2020/09/logo-sofka-blanco-1.png"
+          class="attachment-full size-full lazy-loaded lazyloaded" alt="" />
+      </a>
+    </span>
+  </div>
+
+
+  <div class="menu">
+    <button *ngIf="auth.isLoggedIn" [matMenuTriggerFor]="menu" mat-icon-button class="main-icono favorite-icon"
+      title="Menú" aria-label="Example icon-button with heart icon">
+      <img class="img-round" src="{{ auth.user.photoURL }}" referrerpolicy="no-referrer" alt="Avatar" />
+      <span style="margin-left: 10px">{{ auth.user.displayName }}</span>
+      <mat-icon style="color: white">keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu class="menu-icon" #menu="matMenu">
+      <button routerLink="home" mat-menu-item class="zoom">
+        <mat-icon>home</mat-icon>
+        Mis rutas
+      </button>
+      <button (click)="auth.signOut()" *ngIf="auth.isLoggedIn" mat-menu-item class="zoom">
+        <mat-icon>logout</mat-icon>
+        Cerrar Sesion
+      </button>
+    </mat-menu>
+  </div>
+
+</mat-toolbar>
