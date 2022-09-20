@@ -13,6 +13,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './component/footer/footer.component';
@@ -20,6 +21,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { LoginModule } from './modulos/login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     AngularFireModule.initializeApp(environment.firebase),
-  
+   
+    
     
   ],
   providers: [],
