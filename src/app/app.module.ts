@@ -22,6 +22,10 @@ import { HeaderComponent } from './component/header/header.component';
 import { LoginModule } from './modulos/login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { ApiService } from './shared/services/api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MiRutaAprendizComponent } from './pages/mi-ruta-aprendiz/mi-ruta-aprendiz.component';
+import { ResultadoDelCursoComponent } from './pages/resultado-del-curso/resultado-del-curso.component';
 
 
 @NgModule({
@@ -29,10 +33,13 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     AppComponent,
     FooterComponent,
     HeaderComponent,
+    MiRutaAprendizComponent,
+    ResultadoDelCursoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     LoginModule,
     BrowserAnimationsModule,
     MatMenuModule,
@@ -50,7 +57,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     
     
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
