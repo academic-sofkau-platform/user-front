@@ -1,1 +1,37 @@
-hola
+<h1> My Training </h1>
+<h1> InserteNombreCurso </h1>
+<h1> Ruta Aprendizaje </h1>
+
+<table>
+   
+    <!--Container Curso-->
+    <ng-container  matColumnDef="curso">
+
+        <th mat-header-cell *matHeaderCellDef>
+            <p>Curso</p>
+        </th>
+
+        <!--Traigo la variable-->
+        <td mat-cell *matCellDef="let element"> </td>
+
+    </ng-container>
+
+
+    <!--Container Prerrequisito-->
+    <ng-container  matColumnDef="prerrequisito">
+
+        <th mat-header-cell *matHeaderCellDef>
+            <p>Prerrequisito</p>
+        </th>
+
+        <!--Traigo la variable-->
+        <td mat-cell *matCellDef="let element"> </td>
+
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
