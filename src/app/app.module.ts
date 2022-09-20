@@ -26,6 +26,7 @@ import { ApiService } from './shared/services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MiRutaAprendizComponent } from './pages/mi-ruta-aprendiz/mi-ruta-aprendiz.component';
 import { ResultadoDelCursoComponent } from './pages/resultado-del-curso/resultado-del-curso.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { ResultadoDelCursoComponent } from './pages/resultado-del-curso/resultad
     MatIconModule,
     MatTableModule,
     MatToolbarModule,
+    MatButtonModule,
     AngularFireModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
