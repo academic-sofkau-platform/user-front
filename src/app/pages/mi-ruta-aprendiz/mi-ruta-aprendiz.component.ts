@@ -11,7 +11,7 @@ import { ApiService } from 'src/app/shared/services/api.service';
 export class MiRutaAprendizComponent implements OnInit {
 
   dataSource: any;
-  displayedColumns: string[] = ['curso', 'prerrequisito'];
+  displayedColumns: string[] = ['curso', 'prerrequisito', 'nivel', 'accion'];
   cursosId:string = ""
   nombreCurso:string = ""
 
@@ -21,7 +21,7 @@ export class MiRutaAprendizComponent implements OnInit {
     this.api.getAllTrainingsActivos().subscribe((elements)=> {
     this.cursosId = elements.map((dato) => dato.apprentices.filter((dato:any) => dato.email == 'lauratatis379@gmail.com'))[0][0].tareas
 
-    console.log(this.cursosId)
+    this.dataSource = this.cursosId
       
     })
    
