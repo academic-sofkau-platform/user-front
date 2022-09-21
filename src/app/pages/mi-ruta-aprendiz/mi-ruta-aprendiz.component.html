@@ -1,5 +1,6 @@
+<div class="container"> 
 <h1> My Training </h1>
-<h1> InserteNombreCurso </h1>
+<h1> #InserteNombreCurso </h1>
 <h1> Ruta Aprendizaje </h1>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -25,7 +26,36 @@
         </th>
 
         <!--Traigo la variable-->
-        <td mat-cell *matCellDef="let element"> </td>
+        <td mat-cell *matCellDef="let element"> <p> {{element.cursoId}} </p> </td>
+
+    </ng-container>
+
+
+    <!--Container Nivel-->
+    <ng-container  matColumnDef="nivel">
+
+        <th mat-header-cell *matHeaderCellDef>
+            <p>Nivel</p>
+        </th>
+
+        <!--Traigo la variable-->
+        <td mat-cell *matCellDef="let element"> <p> {{element.cursoId}} </p> </td>
+
+    </ng-container>
+
+
+    <!--Container Accion-->
+    <ng-container  matColumnDef="accion">
+
+        <th mat-header-cell *matHeaderCellDef>
+            <p>Accion</p>
+        </th>
+
+        <td mat-cell *matCellDef="let element"> 
+            <a routerLink="/resumen" style="text-decoration: none;">
+                <button class="zoom">Entregar</button> 
+            </a>
+        </td>
 
     </ng-container>
 
@@ -35,3 +65,5 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </table>
+
+</div>

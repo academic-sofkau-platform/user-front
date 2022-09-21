@@ -19,6 +19,7 @@ button{
 
 textarea{
     width: 50%;
+    margin-bottom: 2%;
 }
 
 h1 {
@@ -28,4 +29,5 @@ h1 {
     color: #111979;
     font-weight: bolder;
     margin-top: 2%;
+    margin-bottom: 2%;
    }
