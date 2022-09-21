@@ -50,8 +50,11 @@
             <p>Accion</p>
         </th>
 
-        <!--Traigo la variable-->
-        <td mat-cell *matCellDef="let element"> <button>Entregar</button> </td>
+        <td mat-cell *matCellDef="let element"> 
+            <a routerLink="/resumen" style="text-decoration: none;">
+                <button class="zoom">Entregar</button> 
+            </a>
+        </td>
 
     </ng-container>
 
