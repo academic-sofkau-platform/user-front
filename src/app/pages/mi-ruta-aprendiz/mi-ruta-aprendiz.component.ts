@@ -17,6 +17,7 @@ export class MiRutaAprendizComponent implements OnInit {
   tareas:any
   rutas:any
   cursoId:any
+  trainingNombre:any
   cursoNombres:[] = []
   cursoPrerrequisito:[] = []
   cursoNivel:[] = []
@@ -60,6 +61,9 @@ export class MiRutaAprendizComponent implements OnInit {
 //el email se cambiaría por el usuario conectado 
 
       this.tareas = elements.map((dato) => dato.apprentices.filter((dato:any) => dato.email == 'lauratatis379@gmail.com'))[0][0].tareas.flatMap((dato: any) => dato.cursoId)
+
+      //ahora mismo trae dos trainings porque el emails está en los dos trainings entonces me quedo con el primero
+      this.trainingNombre = elements.filter((dato) => dato.apprentices.map((datos:any) => datos.email == 'lauratatis379@gmail.com'))[0].name
     })
 
     this.api.getAllRutasAprendizaje().subscribe((elements) => {
@@ -102,9 +106,11 @@ export class MiRutaAprendizComponent implements OnInit {
       let prerrequisito:any = []
 
       //Traigo los Id de la ruta de aprendizaje del aprendiz
+   
      this.rutaAprendizajeId = elements.map((dato) => dato.rutaAprendizajeId)
      this.rutaAprendizajeId = '6324beccddc61d031accd915'
 
+      //Tengo que igualar el dato.id con el Id de la ruta de aprendizaje del aprendiz
      this.api.getAllRutasAprendizaje().subscribe((elements) => {
        rutaAprendizaje = elements.filter((dato) => dato.id == '6324beccddc61d031accd915') 
       })

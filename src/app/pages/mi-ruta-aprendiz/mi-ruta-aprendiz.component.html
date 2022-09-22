@@ -1,6 +1,6 @@
 <div class="container"> 
 <h1> My Training </h1>
-<h1> #InserteNombreCurso </h1>
+<h1> {{trainingNombre}} </h1>
 <h1> Ruta Aprendizaje </h1>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -52,7 +52,7 @@
         </th>
 
         <td mat-cell *matCellDef="let element"> 
-            <a routerLink="/resumen" style="text-decoration: none;">
+            <a routerLink="/resumen/{{element.nombre}}"  style="text-decoration: none;">
                 <button class="zoom">Entregar</button> 
             </a>
         </td>
