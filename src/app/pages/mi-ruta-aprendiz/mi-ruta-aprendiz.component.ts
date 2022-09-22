@@ -53,7 +53,7 @@ export class MiRutaAprendizComponent implements OnInit {
    }
   
     this.dataSource = this.source.flatMap((dato:any) => dato)
-   }, 1050);
+   }, 1150);
   
   
   }
