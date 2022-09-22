@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent},
   { path: 'mi-ruta', component: MiRutaAprendizComponent},
-  { path: 'resumen/:id', component: ResultadoDelCursoComponent},
+  { path: 'resumen/:id/:training/:email', component: ResultadoDelCursoComponent},
 
 ];
 

@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MiRutaAprendizComponent } from './pages/mi-ruta-aprendiz/mi-ruta-aprendiz.component';
 import { ResultadoDelCursoComponent } from './pages/resultado-del-curso/resultado-del-curso.component';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -42,6 +43,8 @@ import { MatButtonModule } from '@angular/material/button';
     AppRoutingModule,
     HttpClientModule,
     LoginModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatMenuModule,
     MatIconModule,
