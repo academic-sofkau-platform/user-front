@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,ViewChild ,OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { DataSource } from '@angular/cdk/table'
 import { ApiService } from 'src/app/shared/services/api.service';
 import { elementAt } from 'rxjs';
+import { ResultadoDelCursoComponent } from '../resultado-del-curso/resultado-del-curso.component';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { elementAt } from 'rxjs';
   styleUrls: ['./mi-ruta-aprendiz.component.css']
 })
 export class MiRutaAprendizComponent implements OnInit {
+
+  
 
   dataSource: any;
   displayedColumns: string[] = ['curso', 'prerrequisito', 'nivel', 'accion'];
@@ -25,6 +28,7 @@ export class MiRutaAprendizComponent implements OnInit {
   rutaAprendizajeId:any
   data:any = []
   source:any = []
+  entregado:boolean = false
   
 
   constructor( public api: ApiService ) { }
@@ -32,6 +36,7 @@ export class MiRutaAprendizComponent implements OnInit {
   ngOnInit() {
    this.ObtenerNombreCurso()
    this.ObtenerPrerrequisitosyNivel()
+
 
    setTimeout(() => {
 
@@ -48,7 +53,6 @@ export class MiRutaAprendizComponent implements OnInit {
    }
   
     this.dataSource = this.source.flatMap((dato:any) => dato)
-   
    }, 1050);
   
   
@@ -131,8 +135,9 @@ export class MiRutaAprendizComponent implements OnInit {
      
     })
   }
-
-
   
 
+  receiveMessage($event:any) {
+   this.entregado = $event
+  }
 }
