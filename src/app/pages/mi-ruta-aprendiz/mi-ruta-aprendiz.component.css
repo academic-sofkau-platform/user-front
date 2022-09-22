@@ -11,7 +11,8 @@ h1 {
 
 p {
     width: 90%;
-    font-size: large;
+    font-size: larger;
+    text-align: center;
 }
   
 table {
@@ -19,6 +20,10 @@ table {
     margin-right: auto;
     margin-top: 100px;
     margin-bottom: 50px;
+}
+
+th {
+  width: 15vw;
 }
 
 button{

@@ -12,7 +12,15 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getAllTrainingsActivos(): Observable<any[]> {
-    return this.http.get<any[]>(environment.apiBase + '/trainings/findAllTrainingActivos');
+    return this.http.get<any[]> (environment.apiBase + '/trainings/findAllTrainingActivos');
+  }
+
+  getAllCursos(): Observable<any[]> {
+    return this.http.get<any[]> (environment.apiBase + '/curso');
+  }
+
+  getAllRutasAprendizaje(): Observable<any[]> {
+    return this.http.get<any[]> (environment.apiBase + '/rutaAprendizaje/findAll')
   }
 
 }
