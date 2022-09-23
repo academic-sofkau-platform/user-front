@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { AddRutaCommand } from '../commands/addRutaCommand';
+import { UpdateTareaCommand } from '../commands/updateTareaCommand';
+
 
 
 @Injectable({
@@ -24,8 +25,14 @@ export class ApiService {
     return this.http.get<any[]> (environment.apiBase + '/rutaAprendizaje/findAll')
   }
 
-  addTarea(trainingId:string, email:string, command:AddRutaCommand) {
-    return this.http.post(environment.apiBase + '/trainings/addtarea/' + trainingId + '/' + email , command)
+  getRutaAprendiz(email:string): Observable<any[]> {
+    return this.http.get<any[]> (environment.apiBase + '/rutaAprendizaje/getRutaAprendiz/' + email)
   }
+  
+  updateTarea(trainingId:string, email:string, command:UpdateTareaCommand) {
+    return this.http.post(environment.apiBase + '/trainings/updateTarea/' + trainingId + '/' + email , command)
+  }
+
+
 
 }

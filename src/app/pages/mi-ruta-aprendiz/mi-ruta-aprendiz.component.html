@@ -13,7 +13,7 @@
         </th>
 
         <!--Traigo la variable-->
-        <td mat-cell *matCellDef="let element" > <p> {{element.nombre}} </p> </td>
+        <td mat-cell *matCellDef="let element" > <p> {{element.nombreCurso}} </p> </td>
 
     </ng-container>
 
@@ -26,7 +26,7 @@
         </th>
 
         <!--Traigo la variable-->
-        <td mat-cell *matCellDef="let element"> <p> {{element.prerrequisito}} </p> </td>
+        <td mat-cell *matCellDef="let element"> <p> {{element.prerrequisitos}} </p> </td>
 
     </ng-container>
 
@@ -52,9 +52,15 @@
         </th>
 
         <td mat-cell *matCellDef="let element"> 
-            <a routerLink="/resumen/{{element.nombre}}/{{trainingNombre}}/{{email}}"  style="text-decoration: none;">
+            <a *ngIf="!element.tarea.entregado" routerLink="/resumen/{{element.cursoId}}/{{trainingId}}/{{element.nombreCurso}}"  style="text-decoration: none;">
                 <button class="zoom">Entregar</button> 
             </a>
+            <p *ngIf="element.tarea.entregado && (element.tarea.nota == null)">
+                Pendiente...
+            </p>
+            <p *ngIf="element.tarea.entregado && (element.tarea.nota !== null)">
+                {{element.tarea.nota}}
+            </p>
         </td>
 
     </ng-container>

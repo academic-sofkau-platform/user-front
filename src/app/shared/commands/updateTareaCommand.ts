@@ -1,4 +1,4 @@
-export interface AddRutaCommand {
+export interface UpdateTareaCommand {
     contenido: string;
     entregado: boolean;
 }

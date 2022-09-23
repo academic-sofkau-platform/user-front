@@ -12,6 +12,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ResultadoDelCursoComponent implements OnInit {
 
   nombreCurso:string = ""
+  email:string = ""
   miCurso:any
   consigna:string = ""
   trainingId:string = ""
@@ -27,10 +28,11 @@ export class ResultadoDelCursoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.nombreCurso = this.route.snapshot.params['id']
+    this.nombreCurso = this.route.snapshot.params['nombre']
+    this.email = 'lauratatis3791@gmail.com'
+    this.trainingId = this.route.snapshot.params['trainingId']
     this.obtenerConsigna()
-    this.obtenerTrainingId()
-
+   
   }
 
   obtenerConsigna() {
@@ -40,17 +42,12 @@ export class ResultadoDelCursoComponent implements OnInit {
     })
   }
 
-  obtenerTrainingId() {
-    this.api.getAllTrainingsActivos().subscribe((elements) => {
-    this.trainingId = elements.filter((dato) => dato.name == this.route.snapshot.params['training']).map((dato:any) => dato.trainingId)[0]
-    })
-  }
-
   entregar() {
-    this.api.addTarea(this.trainingId,this.route.snapshot.params['email'], {
+    this.api.updateTarea(this.trainingId,this.email,{
       contenido: this.contenidoForm.value.contenido,
       entregado: true
     }).subscribe()
+    this.router.navigate(['mi-ruta'])
   }
 
 }
