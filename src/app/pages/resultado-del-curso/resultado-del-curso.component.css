@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap");
+
+.contenedor{
+    min-width: 100%;
+    min-height: 100%;
+    padding-top: 5%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 2%;
+    background-color: #111979;
+    color: white;
+}
+
+textarea{
+    width: 50%;
+    margin-bottom: 2%;
+}
+
+h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #111979;
+    font-weight: bolder;
+    margin-top: 2%;
+    margin-bottom: 2%;
+   }
