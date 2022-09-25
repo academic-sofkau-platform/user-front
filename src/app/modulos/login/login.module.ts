@@ -11,4 +11,6 @@ import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons
   ],
   declarations: [LoginComponent]
 })
-export class LoginModule { }
+export class LoginModule { 
+  
+}

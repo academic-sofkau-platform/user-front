@@ -21,6 +21,7 @@ export class MiRutaAprendizComponent implements OnInit {
     this.trainingNombre = elements[0].nombreTraining
     this.trainingId = elements[0].trainingId
     this.dataSource = elements
+    console.log(elements)
    })
 
 

@@ -13,6 +13,7 @@ export class ResultadoDelCursoComponent implements OnInit {
 
   nombreCurso:string = ""
   email:string = ""
+  cursoId:string = ""
   miCurso:any
   consigna:string = ""
   trainingId:string = ""
@@ -31,6 +32,7 @@ export class ResultadoDelCursoComponent implements OnInit {
     this.nombreCurso = this.route.snapshot.params['nombre']
     this.email = 'lauratatis3791@gmail.com'
     this.trainingId = this.route.snapshot.params['trainingId']
+    this.cursoId = this.route.snapshot.params['cursoId']
     this.obtenerConsigna()
    
   }
@@ -43,7 +45,7 @@ export class ResultadoDelCursoComponent implements OnInit {
   }
 
   entregar() {
-    this.api.updateTarea(this.trainingId,this.email,{
+    this.api.updateTarea(this.trainingId,this.cursoId,this.email,{
       contenido: this.contenidoForm.value.contenido,
       entregado: true
     }).subscribe()
