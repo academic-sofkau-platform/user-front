@@ -28,7 +28,7 @@ export class ApiService {
   getRutaAprendiz(email:string): Observable<any[]> {
     return this.http.get<any[]> (environment.apiBase + '/rutaAprendizaje/getRutaAprendiz/' + email)
   }
-  
+
   updateTarea(trainingId:string, cursoId:string, email:string, command:UpdateTareaCommand) {
     return this.http.post(environment.apiBase + '/trainings/updateTarea/' + trainingId + '/' + email + '/' + cursoId , command)
   }
