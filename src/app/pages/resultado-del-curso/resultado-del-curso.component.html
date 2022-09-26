@@ -1,17 +1,24 @@
-<div class="contenedorimagen">
-  <div class="flechas">
-    <button class="flecha zoomf" routerLink="/mi-ruta" mat-raised-button>
-      <mat-icon>keyboard_backspace</mat-icon>
-    </button>
+<div class="contenedor">
+  <div class="contenedorimagen">
+    <div class="flechas">
+      <button class="flecha zoomf" routerLink="/mi-ruta" mat-raised-button>
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button>
+    </div>
+    <div class="contenedorForm">
+      <h1>{{ nombreCurso }}</h1>
+      <h2>CONSIGNA DEL CURSO:</h2>
+      <h3>{{ consigna }}</h3>
+      <form [formGroup]="contenidoForm" (ngSubmit)="entregar()">
+        <textarea
+          name="textarea"
+          id="textarea"
+          cols="30"
+          rows="10"
+          formControlName="contenido"
+        ></textarea>
+        <button mat-raised-button type="submit" class="zoom">ENTREGAR</button>
+      </form>
+    </div>
   </div>
-
-<div class="contenedor" >
-  <h1>{{nombreCurso}}</h1>
-<h2>CONSIGNA DEL CURSO:</h2>
-<h3>{{consigna}}</h3>
-<form [formGroup]="contenidoForm" (ngSubmit)="entregar()">
-<textarea name="textarea" id="textarea" cols="30" rows="10" formControlName="contenido"></textarea>
-<button  mat-raised-button type="submit" class="zoom">ENTREGAR</button>
-</form>
 </div>
-

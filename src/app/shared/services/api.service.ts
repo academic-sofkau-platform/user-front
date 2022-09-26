@@ -29,7 +29,7 @@ export class ApiService {
     return this.http.get<any[]> (environment.apiBase + '/rutaAprendizaje/getRutaAprendiz/' + email)
   }
 
-  updateTarea(trainingId:string, cursoId:string, email:string, command:UpdateTareaCommand) {
+  updateTarea(trainingId:string, email:string, cursoId:string, command:UpdateTareaCommand) {
     return this.http.post(environment.apiBase + '/trainings/updateTarea/' + trainingId + '/' + email + '/' + cursoId , command)
   }
 
